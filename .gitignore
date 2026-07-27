@@ -52,3 +52,4 @@ Makefile.in
 /po/stamp-po
 /stamp-h1
 /test-driver
+/API/Headers/bufr_api.h

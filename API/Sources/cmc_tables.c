@@ -472,6 +472,13 @@ int bufr_load_wmo_tables( BUFR_Tables *tables )
    return ( (rtrnD >= 0) && (rtrnB >= 0 ));
    }
 
+
+// UCRT does not provide scandir and alphasort, so include
+// alternatives.
+#ifdef _UCRT
+#include "dirent_ucrt.c"
+#endif
+
 /**
  * @english
  *    bufr_load_wmo_tables_list ( path )

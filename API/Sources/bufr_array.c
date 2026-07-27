@@ -414,7 +414,14 @@ This file is part of libECBUFR.
  arr_find( ArrayPtr obj, const void *vaddr, int (*compar)( const void *, const void * ) )
     {
     Array *arr=(Array *)obj;
+    // For some reason the prototypes in UCRT use unsigned int* for
+    // the number of members, while on other systems it is size_t*,
+    // but on UCRT size_t is long long and is incompatible with int.
+#ifdef _UCRT
+    unsigned int c;
+#else
     size_t c;
+#endif
 
     if( arr == NULL ) return NULL;
     if ((arr->eles == NULL)||(arr->count==0)) return NULL;
