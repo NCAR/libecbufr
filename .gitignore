@@ -53,3 +53,8 @@ Makefile.in
 /stamp-h1
 /test-driver
 /API/Headers/bufr_api.h
+/Utilities/bufr_bundle
+/Utilities/bufr_decoder
+/Utilities/bufr_encoder
+/Utilities/bufr_filter
+
